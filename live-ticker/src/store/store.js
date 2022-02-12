@@ -2,10 +2,13 @@ import { configureStore , createSlice} from '@reduxjs/toolkit';
 
 const dataSlice = createSlice({
   name: 'data',
-  initialState: { records: [] },
+  initialState: { records: [], timer : 10 },
   reducers: {
     updateData( state , action) {
       state.records = action.payload.records;
+    },
+    updateTimer(state){
+      state.timer = Number(state.timer) + 1;
     }
   }
 });
